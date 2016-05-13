@@ -4,8 +4,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Azure Speed Test - Measure the latenecy to your nearest Microsoft Azure Data Center">
         <meta name="author" content="Richard Astbury">
-        <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
-        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+        <link href="//ajax.aspnetcdn.com/ajax/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
+        <script src="//ajax.aspnetcdn.com/ajax/jQuery/jquery-2.0.3.min.js"></script>
         <title>Azure Speed Test</title>
         <link rel="icon" type="image/png" href="/favicon.png" />
         <style>
@@ -75,7 +75,9 @@ var locations = {
     "speedtesteus2": "East US 2",
     "mickmel": "Australia Southeast",
     "micksyd": "Australia East",
-    "cdn": "Content Delivery Network *"
+    "cdn": "Content Delivery Network *",
+    "speedtestsh": "China East",
+    "speedtestbj": "China North"
 };
 
 var colours = {
@@ -94,7 +96,9 @@ var colours = {
     "speedtesteus2": "#CC00FF",    
     "mickmel": "#FF00CC",
     "micksyd": "#666",    
-    "cdn": "#000000"
+    "cdn": "#000000",
+    "speedtestsh": "#FF00CC",
+    "speedtestbj": "#666"
 }
 
 $().ready(function(){
@@ -124,6 +128,18 @@ function run(){
             if (x === "cdn"){
                 $.ajax({
                     url: "http://az207485.vo.msecnd.net/cb.json",
+                    dataType: "jsonp",
+                    cache: false
+                });
+            } else if (x === "speedtestsh"){
+                $.ajax({
+                    url: "http://speedtestsh.blob.core.chinacloudapi.cn/cb.json",
+                    dataType: "jsonp",
+                    cache: false
+                });
+            } else if (x === "speedtestbj"){
+                $.ajax({
+                    url: "http://speedtestbj.blob.core.chinacloudapi.cn/cb.json",
                     dataType: "jsonp",
                     cache: false
                 });
@@ -204,24 +220,6 @@ function call(data){
 var i = 1;
 
         </script>
-        <script src="//two10degrees.blob.core.windows.net/Chart.min.js"></script>
-
-        <script src="https://speedtestwe.blob.core.windows.net/foo.js"></script>
-        <script src="https://speedtestsea.blob.core.windows.net/foo.js"></script>
-        <script src="https://speedtestea.blob.core.windows.net/foo.js"></script>
-        <script src="https://speedtestnsus.blob.core.windows.net/foo.js"></script>
-        <script src="https://speedtestne.blob.core.windows.net/foo.js"></script>
-        <script src="https://speedtestscus.blob.core.windows.net/foo.js"></script>
-        <script src="https://speedtestwus.blob.core.windows.net/foo.js"></script>
-        <script src="https://speedtesteus.blob.core.windows.net/foo.js"></script>
-        <script src="https://speedtestjpe.blob.core.windows.net/foo.js"></script>
-        <script src="https://speedtestjpw.blob.core.windows.net/foo.js"></script>
-        <script src="https://speedtestbs.blob.core.windows.net/foo.js"></script>
-        <script src="https://speedtestcus.blob.core.windows.net/foo.js"></script>
-        <script src="https://speedtesteus2.blob.core.windows.net/foo.js"></script>
-        <script src="https://mickmel.blob.core.windows.net/foo.js"></script>
-        <script src="https://micksyd.blob.core.windows.net/foo.js"></script>
-        <script src="http://az207485.vo.msecnd.net/foo.js"></script>
 
     </body>
 </html>
