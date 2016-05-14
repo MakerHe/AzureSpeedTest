@@ -80,6 +80,27 @@ var locations = {
     "speedtestbj": "China North"
 };
 
+var jsonurls = {
+    "speedtestwe": "https://speedtestwe.blob.core.windows.net/cb.json",
+    "speedtestsea" : "https://speedtestsea.blob.core.windows.net/cb.json",
+    "speedtestea": "https://speedtestea.blob.core.windows.net/cb.json",
+    "speedtestnsus": "https://speedtestnsus.blob.core.windows.net/cb.json",
+    "speedtestne": "https://speedtestne.blob.core.windows.net/cb.json",
+    "speedtestscus": "https://speedtestscus.blob.core.windows.net/cb.json",
+    "speedtestwus": "https://speedtestwus.blob.core.windows.net/cb.json",
+    "speedtesteus": "https://speedtesteus.blob.core.windows.net/cb.json",
+    "speedtestjpe": "https://speedtestjpe.blob.core.windows.net/cb.json",
+    "speedtestjpw": "https://speedtestjpw.blob.core.windows.net/cb.json",
+    "speedtestbs": "https://speedtestbs.blob.core.windows.net/cb.json",
+    "speedtestcus": "https://speedtestcus.blob.core.windows.net/cb.json",
+    "speedtesteus2": "https://speedtesteus2.blob.core.windows.net/cb.json",
+    "mickmel": "https://mickmel.blob.core.windows.net/cb.json",
+    "micksyd": "https://micksyd.blob.core.windows.net/cb.json",
+    "cdn": "http://az207485.vo.msecnd.net/cb.json",
+    "speedtestsh": "http://speedtestsh.blob.core.chinacloudapi.cn/cb.json",
+    "speedtestbj": "http://speedtestbj.blob.core.chinacloudapi.cn/cb.json"
+};
+
 var colours = {
     "speedtestwe": "#FF0000",
     "speedtestsea" : "#FF6600",
@@ -125,31 +146,11 @@ function run(){
     for (var x in locations){
         if (!startTime[x]){
             startTime[x] = new Date().getTime();
-            if (x === "cdn"){
-                $.ajax({
-                    url: "http://az207485.vo.msecnd.net/cb.json",
-                    dataType: "jsonp",
-                    cache: false
-                });
-            } else if (x === "speedtestsh"){
-                $.ajax({
-                    url: "http://speedtestsh.blob.core.chinacloudapi.cn/cb.json",
-                    dataType: "jsonp",
-                    cache: false
-                });
-            } else if (x === "speedtestbj"){
-                $.ajax({
-                    url: "http://speedtestbj.blob.core.chinacloudapi.cn/cb.json",
-                    dataType: "jsonp",
-                    cache: false
-                });
-            } else {
-                $.ajax({
-                    url: "https://" + x + ".blob.core.windows.net/cb.json",
-                    dataType: "jsonp",
-                    cache: false
-                });
-            }
+            $.ajax({
+                url: jsonurls[x],
+                dataType: "jsonp",
+                cache: false
+            });
         }
 
     }
