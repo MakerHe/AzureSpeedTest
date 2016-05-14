@@ -1,9 +1,10 @@
-AzureSpeedTest
-==============
+AzureSpeedTest with China
+============================
 
 A web page to measure latency to Azure Blob Storage.
 
-[http://azurespeedtest.azurewebsites.net/](http://azurespeedtest.azurewebsites.net/)
+AzureSpeedTest:[http://azurespeedtest.azurewebsites.net/](http://azurespeedtest.azurewebsites.net/)
+AzureSpeedTest With China DataCenter included:[http://azurespeedtestcn.chinacloudsites.cn/](http://azurespeedtestcn.chinacloudsites.cn/)
 
 
 Embed in your own code
