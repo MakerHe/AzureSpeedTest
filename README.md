@@ -4,6 +4,7 @@ AzureSpeedTest with China
 A web page to measure latency to Azure Blob Storage.
 
 AzureSpeedTest:[http://azurespeedtest.azurewebsites.net/](http://azurespeedtest.azurewebsites.net/)
+
 AzureSpeedTest With China DataCenter included:[http://azurespeedtestcn.chinacloudsites.cn/](http://azurespeedtestcn.chinacloudsites.cn/)
 
 
